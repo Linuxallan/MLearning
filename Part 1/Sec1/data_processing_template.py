@@ -15,8 +15,13 @@ import pandas as pd # Carga de datos (como para big data)
 
 # importar el data set
 dataset = pd.read_csv('Data.csv')
-X = dataset.iloc[:, :-1].values
-Y = dataset.iloc[:, 3].values
+# Vector: lista de 1 x muchos (una columna por muchas filas o 
+#          una fila x muchas columnas)
+# X = dataset.iloc[:, 1].values # vector
+# Matriz: un array de 'n' filas por 'm' columnas.
+# X = dataset.iloc[:, 1:2].values # matriz
+X = dataset.iloc[:, :-1].values # vector
+Y = dataset.iloc[:, 3].values # vector
 
 # Dividir los datos en 80% en entrenamiento y 20% en test
 from sklearn.model_selection import train_test_split
