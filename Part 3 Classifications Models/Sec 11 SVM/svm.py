@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Wed Aug  3 02:40:21 2022
+Created on Wed Aug  3 21:07:25 2022
 
 @author: allancortez
 """
 
-# Plantilla de clasificacion 
+# Maquina de Soporte Vectorial (SVM)
 
 # Librerias
 import numpy as np # Libreria de matematicas para los algoritmos MLeaning
@@ -35,9 +35,11 @@ X_train = sc_X.fit_transform(X_train)
 X_test = sc_X.transform(X_test)
 
 
-# Ajustar el clasificador al conjunto de entrenamiento
-# Crear modelo de clasificacion
-classifier = 0 # Editar por que debe ser un objeto complejo
+# Ajustar el SVM al conjunto de entrenamiento
+from sklearn.svm import SVC
+# Kernels : 'linear', 'poly', 'rbf'(gaussiano(campana)), 'sigmoid'. # cada kernel hace una ealuacion diferente.
+classifier = SVC(kernel = 'linear', random_state=0) # Kernel 'rbf' ofrece el mejor resultado: 93% de efectividad.
+classifier.fit(X_train, Y_train)
 
 
 # Prediccion
@@ -63,11 +65,12 @@ plt.ylim(X2.min(), X2.max())
 for i, j in enumerate(np.unique(Y_set)):
     plt.scatter(X_set[Y_set == j, 0], X_set[Y_set == j, 1],
                 c = ListedColormap(('red', 'green'))(i), label = j)
-plt.title('Clasificador (Conjunto de Entrenamiento)')
+plt.title('SVM (Conjunto de entrenamiento)')
 plt.xlabel('Edad')
 plt.ylabel('Sueldos estimados')
 plt.legend()
 plt.show()
+
 
 # Representacion Grafica del Conjunto de Testing
 # from matplotlib.colors import ListedColormap

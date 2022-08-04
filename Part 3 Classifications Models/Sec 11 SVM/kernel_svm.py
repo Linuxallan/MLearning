@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Wed Aug  3 02:40:21 2022
+Created on Wed Aug  3 22:26:12 2022
 
 @author: allancortez
 """
 
-# Plantilla de clasificacion 
+# Kernel SVM
 
 # Librerias
 import numpy as np # Libreria de matematicas para los algoritmos MLeaning
@@ -36,9 +36,10 @@ X_test = sc_X.transform(X_test)
 
 
 # Ajustar el clasificador al conjunto de entrenamiento
-# Crear modelo de clasificacion
-classifier = 0 # Editar por que debe ser un objeto complejo
-
+from sklearn.svm import SVC # SVC: Supper Vector Classifier
+# 'rbf' : radial base function.
+classifier = SVC(kernel = 'rbf', random_state=0)
+classifier.fit(X_train, Y_train)
 
 # Prediccion
 Y_pred = classifier.predict(X_test)

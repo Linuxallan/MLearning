@@ -52,7 +52,7 @@ from sklearn.metrics import confusion_matrix # 'confusion_matrix' es una funcion
 cm = confusion_matrix(Y_test, Y_pred)
 
 
-# Representacion grafica
+# Representacion grafica del conjunto de Entrenamiento
 from matplotlib.colors import ListedColormap
 X_set, Y_set = X_train, Y_train
 X1, X2 = np.meshgrid(np.arange(start = X_set[:, 0].min() - 1, stop = X_set[:, 0].max() + 1, step = 0.01),
@@ -64,7 +64,7 @@ plt.ylim(X2.min(), X2.max())
 for i, j in enumerate(np.unique(Y_set)):
     plt.scatter(X_set[Y_set == j, 0], X_set[Y_set == j, 1],
                 c = ListedColormap(('red', 'green'))(i), label = j)
-plt.title('Clasificador')
+plt.title('Clasificador Regresion Logistica (Conjunto de Entrenamiento)')
 plt.xlabel('Edad')
 plt.ylabel('Sueldos estimados')
 plt.legend()
