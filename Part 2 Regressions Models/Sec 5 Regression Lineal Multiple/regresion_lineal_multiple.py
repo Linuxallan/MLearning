@@ -34,7 +34,7 @@ ct = ColumnTransformer(
     [('one_hot_encoder', OneHotEncoder(categories='auto'), [3])],   
     remainder='passthrough'                        
 )
-X = np.array(ct.fit_transform(X), dtype=np.float)
+X = np.array(ct.fit_transform(X), dtype=np.float64)
 
 # Evitar trampa de variables Dummy (eliminar una si es mayor o igual a 2)
 X = X[:, 1:]
@@ -77,6 +77,7 @@ X_opt = X[:, [0,1,2,3,4,5]].tolist()
 # de regresion lineal multiple (fit())
 regression_OLS = sm.OLS(endog = Y, exog = X_opt).fit()
 regression_OLS.summary()
+
 
 ### Se iran eliminando hacia atras dependiendo si el P-Valor es superior al
 ### LS definido : 0.05

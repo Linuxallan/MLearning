@@ -55,13 +55,13 @@ plt.scatter(X, Y, color = "red")
 # python 3.7++
 # lin_reg_2.predict([[X]])
 # Forma de construccion fina de la funcion
-plt.plot(X, regression.predict(X), color = "blue")
+plt.plot(X_grid, regression.predict(X_grid), color = "blue")
 # Forma bruta (funcion construida por rectas)
 # plt.plot(X, lin_reg_2.predict(X_poly), color = "blue")
 # Forma de construccion diferente pero igual
 # plt.plot(X, lin_reg_2.predict(poly_reg.fit_transform(X)), color = "blue")
-plt.title("Modelo de Arbol de Regresion")
-plt.xlabel("data_x_tittle")
-plt.ylabel("data_y_tittle")
+plt.title("Sueldos vs Años de Experiencia")
+plt.xlabel("Años de experiencia")
+plt.ylabel("Sueldos")
 plt.show()
 

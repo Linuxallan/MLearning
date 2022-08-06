@@ -72,9 +72,9 @@ plt.plot(X_grid, lin_reg_2.predict(poly_reg.fit_transform(X_grid)), color = "blu
 # plt.plot(X, lin_reg_2.predict(X_poly), color = "blue")
 # Forma de construccion diferente pero igual
 # plt.plot(X, lin_reg_2.predict(poly_reg.fit_transform(X)), color = "blue")
-plt.title("Modelo de Regresion Polinomicaa")
-plt.xlabel("Niveless")
-plt.ylabel("Sueldoss")
+plt.title("Sueldos vs Años de Experiencia")
+plt.xlabel("Años de experiencia")
+plt.ylabel("Sueldos")
 plt.show()
 
 # Prediccion para un dato de entrada
