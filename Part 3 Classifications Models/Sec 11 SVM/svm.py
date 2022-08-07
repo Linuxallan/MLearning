@@ -66,8 +66,8 @@ for i, j in enumerate(np.unique(Y_set)):
     plt.scatter(X_set[Y_set == j, 0], X_set[Y_set == j, 1],
                 c = ListedColormap(('red', 'green'))(i), label = j)
 plt.title('SVM (Conjunto de entrenamiento)')
-plt.xlabel('Edad')
-plt.ylabel('Sueldos estimados')
+plt.xlabel('Edades')
+plt.ylabel('Sueldos')
 plt.legend()
 plt.show()
 

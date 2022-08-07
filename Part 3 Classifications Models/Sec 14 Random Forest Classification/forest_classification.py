@@ -68,9 +68,9 @@ plt.ylim(X2.min(), X2.max())
 for i, j in enumerate(np.unique(Y_set)):
     plt.scatter(X_set[Y_set == j, 0], X_set[Y_set == j, 1],
                 c = ListedColormap(('red', 'green'))(i), label = j)
-plt.title('Clasificador Bosque Aleatorio (Conjunto de Entrenamiento)')
-plt.xlabel('Edad')
-plt.ylabel('Sueldos estimados')
+plt.title('Sueldos vs Edades')
+plt.xlabel('Edades')
+plt.ylabel('Sueldos')
 plt.legend()
 plt.show()
 
