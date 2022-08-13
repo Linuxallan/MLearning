@@ -120,7 +120,7 @@ classifier.compile(optimizer = "adam", # Algoritmo que logra que los pesos de la
 # Ajustar la RNA (ANN) al conjunto de Entrenamiento
 classifier.fit(X_train, Y_train, 
                batch_size=10, # Cada 10 datos se evalua los pesos de la red.
-               epochs=20)  # Iteraciones de 'Entrenamiento' sobre el conjunto de 'Entrenamiento'
+               epochs=5)  # Iteraciones de 'Entrenamiento' sobre el conjunto de 'Entrenamiento'
 
 
 # ----------------------------------------------------------------------------
