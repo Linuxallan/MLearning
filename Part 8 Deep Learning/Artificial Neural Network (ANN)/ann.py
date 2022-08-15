@@ -98,7 +98,7 @@ classifier = Sequential()
 classifier.add(Dense(units = 6,     # Agregar una 'Capa Oculta' de 6 'neuronas'. (6 = media entre Nº variables y Nº salidas(es opcional, lo ideal es experimentar)))
                      kernel_initializer = "uniform",  # Inicializar los pesos con valores pequeños cercanos a 0
                      activation = "relu",   # Funcion de Activacion
-                     input_dim = 11))   #Agregar 'Capa de Entrada' con 11 neuronas.
+                     input_dim = 11))   #Agregar 'Capa de Entrada' (input) con 11 neuronas.
 
 # Añadir una segunda 'Capa Oculta'
 classifier.add(Dense(units = 6,     # Agregar una 'Capa Oculta' de 6 'neuronas'. (6 = media entre Nº variables y Nº salidas(es opcional, lo ideal es experimentar)))
@@ -115,7 +115,7 @@ classifier.add(Dense(units=1,
 # Gradiente Descendiente, y Gradiente Descendiente Estocástico.
 classifier.compile(optimizer = "adam", # Algoritmo que logra que los pesos de la red mejoren hasta ser efectivo. 
                    loss = "binary_crossentropy", # Algoritmo de 'Funcion de Perdida'
-                   metrics = ["accuracy"])
+                   metrics = ["accuracy"]) # Metrica de 'Presicion' para evaluar el numero de predicciones correctar respecto al total
 
 # Ajustar la RNA (ANN) al conjunto de Entrenamiento
 classifier.fit(X_train, Y_train, 
